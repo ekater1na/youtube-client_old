@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FilteringCriteriaComponent } from './components/filtering-criteria/filt
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

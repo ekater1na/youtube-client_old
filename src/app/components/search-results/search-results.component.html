@@ -1,2 +1,6 @@
 <p>search-results works!</p>
-<app-search-item></app-search-item>
+<p>{{ user.name }}</p>
+<app-search-item 
+*ngFor="let user of users"
+[user]="user"
+></app-search-item>

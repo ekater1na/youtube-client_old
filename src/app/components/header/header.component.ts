@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public showFilter: boolean = false;
 
   constructor() { }
 
   public ngOnInit(): void {
   }
 
+  public onShowFilter(): void {
+    this.showFilter = !this.showFilter;
+  }
 }

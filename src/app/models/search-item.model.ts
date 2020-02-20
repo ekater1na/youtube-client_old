@@ -11,13 +11,7 @@ interface Snippet {
   channelId: string;
   title: string;
   description: string;
-  thumbnails: {
-    default: ThumbnailItem;
-    medium: ThumbnailItem;
-    high: ThumbnailItem;
-    standard: ThumbnailItem;
-    maxres: ThumbnailItem;
-  };
+  thumbnails:  ThumbnailItems;
   channelTitle: string;
   tags: string[];
   categoryId: string;
@@ -25,6 +19,14 @@ interface Snippet {
   defaultLanguage?: string;
   localized: Localized;
   defaultAudioLanguage: string;
+}
+
+interface ThumbnailItems {
+  default: ThumbnailItem;
+  medium: ThumbnailItem;
+  high: ThumbnailItem;
+  standard: ThumbnailItem;
+  maxres: ThumbnailItem;
 }
 
 interface ThumbnailItem {

@@ -1,2 +1,32 @@
-<p>search-results works!</p>
-<app-search-item></app-search-item>
+<mat-grid-list gutterSize="1rem" cols="3">
+<mat-card>
+  
+    <mat-card-content>
+     
+        <div *ngFor="let item of response.items"        >
+          <mat-grid-list cols="12" rowHeight="1:1">
+            <app-search-item [item]="item"></app-search-item>
+          </mat-grid-list>
+        </div>
+      
+    </mat-card-content>
+  </mat-card>
+  
+  
+  <mat-card class="card">
+  
+  
+    <mat-card-content>
+      <div fxLayout="row wrap">
+        <div
+         
+          *ngFor="let item of videos"
+        >
+          <mat-grid-list cols="12" rowHeight="1:1">
+            <app-search-item [item]="item"></app-search-item>
+          </mat-grid-list>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-grid-list>

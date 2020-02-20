@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
+  public transform(value: unknown, ...args: unknown[]): unknown {
     return null;
   }
 

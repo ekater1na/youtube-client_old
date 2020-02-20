@@ -9,7 +9,7 @@ export class SetBorderDirective implements OnChanges {
 
   constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
 
-    this.setBoxShadow();
+    this.setBoxBoarder();
    }
 
    public ngOnChanges(): void {
@@ -26,10 +26,10 @@ export class SetBorderDirective implements OnChanges {
     if (daysLag > 180) {
       this.borderColor = '#FF0000';
    }
-    this.setBoxShadow(`${this.borderColor}`);
+    this.setBoxBoarder(`${this.borderColor}`);
    }
 
-   public setBoxShadow(color: string = '#FFFF00', size: string = '7'): void {
+   public setBoxBoarder(color: string = '#FFFF00', size: string = '7'): void {
     this.renderer2.setStyle(this.elementRef.nativeElement,
                             'box-shadow', `0px ${size}px 0px 0px ${color}`);
    }

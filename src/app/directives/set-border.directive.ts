@@ -17,6 +17,7 @@ export class SetBorderDirective implements OnChanges {
 
     const date: Date = new Date(this.publicationDate);
     const  daysLag: number = Math.ceil(Math.abs(Date.now() - date.getTime()) / (1000 * 3600 * 24));
+
     if (daysLag < 31) {
       this.borderColor = '#008000';
      }

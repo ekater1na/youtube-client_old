@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SetBorderDirective } from './directives/set-border.directive';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SetBorderDirective } from './directives/set-border.directive';
     SearchResultsComponent,
     SearchItemComponent,
     FilteringCriteriaComponent,
-    SetBorderDirective
+    SetBorderDirective,
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

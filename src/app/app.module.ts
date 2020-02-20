@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { SetBorderDirective } from './directives/set-border.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HeaderComponent,
     SearchResultsComponent,
     SearchItemComponent,
-    FilteringCriteriaComponent
+    FilteringCriteriaComponent,
+    SetBorderDirective
   ],
   imports: [
     BrowserModule,

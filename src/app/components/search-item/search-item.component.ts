@@ -8,10 +8,11 @@ import { SearchItem } from '../../models/search-item.model';
 })
 export class SearchItemComponent implements OnInit {
   @Input() public item: SearchItem;
+  public publicationDate: string;
 
   constructor() {}
 
   public ngOnInit(): void {
-
+    this.publicationDate = this.item.snippet.publishedAt;
   }
 }

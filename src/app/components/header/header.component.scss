@@ -1,7 +1,5 @@
 mat-toolbar {
     height: 80px;
-    display: flex;  
-    justify-content: center;  
 }
 
 .logo {
@@ -12,4 +10,14 @@ mat-toolbar {
 .login {
     margin-right: 0;
     margin-left: auto;
+}
+
+input {
+   border-radius: 5px;
+   width: 350px;
+   height: 30px;
+}
+
+.setting {
+    border: none;
 }

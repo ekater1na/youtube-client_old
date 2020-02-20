@@ -1,16 +1,14 @@
-* {
-    margin: auto;
-}
-
 a {
+    color: white;
     text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
   }
   
-mat-card {
-    max-width: 25rem;
-}
-
-.mat-card-header .mat-card-title {
-    font-size: 1rem;
-}
-  
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }

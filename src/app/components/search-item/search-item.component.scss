@@ -1,10 +1,25 @@
-:host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+a {
+    text-decoration: none;
+  }
+  
+  .mat-card {
+    border-bottom: 4px solid red;
+  }
+  
+  .mat-card-header .mat-card-title {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .mat-card-subtitle {
+    text-align: center;
+    font-size: 0.8rem;
   }
 
-  mat-card-subtitle {
-      text-align: center;
+  .mat-card-actions {
+      padding: 0px;
+  }
+
+  .mat-card-image {
+    background-size: cover;
   }

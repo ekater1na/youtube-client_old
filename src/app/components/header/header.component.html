@@ -1,7 +1,9 @@
 <mat-toolbar>
     <mat-toolbar-row>
         <img  class="logo"    src="../../../assets/logo.png" alt="">
-        <input type="text">
+
+        <input type="text" #searchInput [(ngModel)]="searchStr">
+        
         <button mat-stroked-button color="primary">search</button>
         
         <button class="setting" (click)="onShowFilter()"><img src="../../../assets/search_settings.png" alt=""></button>

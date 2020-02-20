@@ -16,6 +16,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { SetBorderDirective } from './directives/set-border.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SortPipe } from './pipes/sort.pipe';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

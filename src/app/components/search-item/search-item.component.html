@@ -1,6 +1,7 @@
 <mat-card class="card" appSetBorder [publicationDate]='publicationDate'>
   <img mat-card-image src="{{item.snippet.thumbnails.high.url}}" alt="thumbnails">
     <mat-card-header>
+
       <mat-card-subtitle>
         <mat-icon>visibility</mat-icon>
         {{item.statistics.viewCount}}
@@ -13,12 +14,12 @@
 
         <mat-icon>chat_bubble_outline</mat-icon>
         {{item.statistics.commentCount}}
-
       </mat-card-subtitle>
-      <mat-card-title>{{item.snippet.title}}</mat-card-title>
+
+      <mat-card-title>{{item.snippet.title }}</mat-card-title>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-button><a>more...</a></button>
+      <button mat-stroked-button><a>more...</a></button>
     </mat-card-actions>
   </mat-card>
   

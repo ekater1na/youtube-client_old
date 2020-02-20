@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SearchResponse } from '../../models/search-response.model';
 import { SearchItem } from './../../models/search-item.model';
 import { RESPONSE } from './../../data';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public showFilter: boolean = false;
 
+  public searchStr: string = '';
+
   constructor() { }
 
   public ngOnInit(): void {

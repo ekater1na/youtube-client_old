@@ -1,6 +1,6 @@
 import { Injectable, OnChanges } from '@angular/core';
 import { SearchResponse } from '../models/search-response.model';
-import { SearchItem } from '../models/search-item.model';
+import { RESPONSE } from '../data';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class StateService implements OnChanges {
   constructor() { }
 
   public getResponseAll(): SearchResponse {
-    return SearchItem;
+    return RESPONSE;
   }
 
   public ngOnChanges(): void {

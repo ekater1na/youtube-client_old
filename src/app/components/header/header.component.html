@@ -2,9 +2,14 @@
     <mat-toolbar-row>
         <img  class="logo"    src="../../../assets/logo.png" alt="">
 
-        <input type="text" #searchInput [(ngModel)]="searchStr">
-        
-        <button mat-stroked-button color="primary">search</button>
+        <form>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="search" #searchInput/>
+            </mat-form-field>
+            <button type="submit" mat-icon-button (click)="onSearchInTitles(searchInput.value)">
+              <mat-icon>youtube_searched_for</mat-icon>
+            </button>
+        </form>
         
         <button class="setting" (click)="onShowFilter()"><img src="../../../assets/search_settings.png" alt=""></button>
         

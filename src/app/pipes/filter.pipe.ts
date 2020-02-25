@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
 
   public transform(items: SearchItem[], value: string ): SearchItem[] {
     return items.filter(user => {
-      return user.snippet.title.includes(value);
+      return user.snippet.title.toLowerCase().includes(value.toLowerCase());
     });
   }
 

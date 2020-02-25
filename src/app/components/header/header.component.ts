@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public showFilter: boolean = false;
 
-  public searchStr: string = '';
-
-  constructor() { }
+  constructor(public stateService: StateService) { }
 
   public ngOnInit(): void {
   }
 
   public onShowFilter(): void {
     this.showFilter = !this.showFilter;
+  }
+
+  public onSearchInTitles(word: string): void {
+    this.stateService.searchInTitles  = word;
   }
 }

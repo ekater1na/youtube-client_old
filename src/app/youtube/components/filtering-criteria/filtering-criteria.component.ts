@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../../services/state.service';
+import { StateService } from 'src/app/youtube/services/state.service';
 @Component({
   selector: 'app-filtering-criteria',
   templateUrl: './filtering-criteria.component.html',

@@ -1,6 +1,6 @@
 import { Injectable, OnChanges } from '@angular/core';
-import { SearchResponse } from '../models/search-response.model';
 import { RESPONSE } from '../../data';
+import { SearchResponse } from 'src/app/shared/models/search-response.model';
 
 @Injectable({
   providedIn: 'root'

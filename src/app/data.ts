@@ -1,4 +1,4 @@
-import { SearchResponse } from './youtube/models/search-response.model';
+import { SearchResponse } from './shared/models/search-response.model';
 
 // tslint:disable: max-line-length
 

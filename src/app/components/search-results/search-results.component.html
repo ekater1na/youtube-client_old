@@ -5,6 +5,7 @@
     *ngFor="
     let item of response.items
     | filter: stateService.searchInTitles
+    | sort: stateService.bySort
     ">
   
      <mat-card>

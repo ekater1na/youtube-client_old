@@ -1,23 +1,23 @@
-mat-toolbar {
-    height: 80px;
-}
-
-.logo {
-    margin-right: auto;
-    margin-left: 0;
-}
-
-.login {
-    margin-right: 0;
-    margin-left: auto;
-}
-
-input {
-   border-radius: 5px;
-   width: 350px;
-   height: 30px;
-}
-
-.setting {
-    border: none;
-}
+    mat-toolbar {
+        height: 90px;
+    }
+    
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .login {
+        margin-right: 0;
+    }
+    
+    input {
+       border-radius: 5px;
+       width: 350px;
+       height: 30px;
+    }
+    
+    .setting {
+        border: none;
+    }

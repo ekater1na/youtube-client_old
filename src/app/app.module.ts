@@ -19,6 +19,8 @@ import { SetBorderDirective } from './directives/set-border.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     FilteringCriteriaComponent,
     SetBorderDirective,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

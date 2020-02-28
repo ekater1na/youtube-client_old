@@ -21,6 +21,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
+import { DetailedInfoComponent } from './detailed-info/detailed-info.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ErrorComponent } from './error/error.component';
     FilterPipe,
     SortPipe,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailedInfoComponent
   ],
   imports: [
     BrowserModule,

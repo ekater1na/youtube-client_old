@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material';
 import { MatInputModule} from '@angular/material';
+import { SearchService } from './services/sort.service';
 
 // tslint:disable-next-line: typedef
 const materialModules = [
@@ -42,15 +43,10 @@ const materialModules = [
     YoutubeRoutingModule,
     ...materialModules
   ],
-  exports: [
-    SearchResultsComponent,
-    SearchItemComponent,
-    DetailedInfoComponent,
-    FilteringCriteriaComponent,
-    ...materialModules
-  ],
+  exports: [],
   providers: [
-    StateService
+    StateService,
+    SearchService
   ]
 })
 export class YoutubeModule { }

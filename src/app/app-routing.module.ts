@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchResultsComponent } from './youtube/components/search-results/search-results.component';
-import { ErrorComponent } from './core/components/error/error.component';
+import { ErrorComponent } from './core/pages/error/error.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { DetailedInfoComponent } from './youtube/components/detailed-info/detailed-info.component';
 
 const routes: Routes = [
+  {path: 'login',
+  loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)},
+  {path: 'main',
+  loadChildren: () => import('./youtube/youtube.module')
+  .then((m) => m.YoutubeModule), canActivate: [AuthGuard]},
+  {path: ':id', component: DetailedInfoComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: 'main', component: SearchResultsComponent},
-  {path: 'login', loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)},
-  {path: '', loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule)},
-  {path: 'page404', component: ErrorComponent },
-  {path: '**', redirectTo: '/page404', pathMatch: 'full' }
+  {path: '**', component: ErrorComponent }
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 export interface User {
-    login: String;
-    password: String;
-    token?: String;
+    login: string;
+    password: string;
+    token?: string;
+    show?: boolean;
 }

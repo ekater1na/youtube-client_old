@@ -11,22 +11,32 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   public currentUser: User;
+  public show: boolean;
 
   constructor(
       private router: Router,
-      private authenticationService: AuthService
+      private authService: AuthService
   ) {
-      this.authenticationService.currentUser.subscribe((x: User) => this.currentUser = x);
+      if (this.authService.login) {
+        this.router.navigate(['./main']);
+      }
   }
 
   public ngOnInit(): void { }
 
+  public auth(data: User): void {
+    // this.authService.setAuthToken(data);
+  if (data.login !== '' && data.password !== '') {
+    this.show = true;
+    this.authService.login(data.login, data.password);
+    this.router.navigate(['main']);
+  } else {
+    alert('Error');
+  }
+  }
+
   public logout(): void {
-      this.authenticationService.logout();
+      this.authService.logout();
       this.router.navigate(['/login']);
   }
 }
-  // public onFormSubmit(data: User): void {
-  //   this.authService.setAuthToken(data);
-  //   this.router.navigate(['./main']);
-  // }

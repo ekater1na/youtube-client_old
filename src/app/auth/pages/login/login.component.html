@@ -9,7 +9,7 @@
               <input  matInput  placeholder="Password"  name="password">
            </mat-form-field>
            <mat-card-actions>
-            <button mat-raised-button  color="primary">REGISTER</button>
+            <button mat-raised-button  color="primary" [disabled]="!loginForm.valid">Login</button>
           </mat-card-actions>
     </form>
   </mat-card-content>

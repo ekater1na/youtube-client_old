@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchItem } from 'src/app/shared/models/search-item.model';
+import { SearchItem } from '../models/search-item.model';
 
 @Pipe({
   name: 'sort'

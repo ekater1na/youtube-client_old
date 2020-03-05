@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from 'src/app/youtube/services/state.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,16 @@ export class HeaderComponent implements OnInit {
 
   public searchStr: string = '';
 
-  constructor() { }
+  constructor(public stateService: StateService) { }
 
   public ngOnInit(): void {
   }
 
   public onShowFilter(): void {
     this.showFilter = !this.showFilter;
+  }
+
+  public onSearchInTitles(word: string): void {
+    this.stateService.searchInTitles  = word;
   }
 }

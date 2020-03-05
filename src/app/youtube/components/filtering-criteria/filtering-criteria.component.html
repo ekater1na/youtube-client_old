@@ -1,7 +1,17 @@
 <mat-toolbar>
     <span>Sorting by:</span>
-    <a href="">date</a>
-    <a href="">count of views</a>
-    <a href="">by word or sentance</a>
-    <input type="text" name="" id="">
+    <button mat-icon-button (click) = "onSortBy('date')">
+        <a>date</a>
+    </button>
+
+    <button mat-icon-button (click)= "onSortBy('viewCount')">
+    <a>count of views</a>
+    </button>
+
+    <mat-form-field class="mat-headline" >
+        <mat-label>by word or sentance</mat-label>
+        <input type="text" matInput placeholder=""  />
+    </mat-form-field>
 </mat-toolbar>
+
+<!-- [(ngModel)]="stateService.searchInTitles" -->

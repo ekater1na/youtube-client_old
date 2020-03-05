@@ -9,6 +9,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
     FilteringCriteriaComponent,
     SetBorderDirective,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,

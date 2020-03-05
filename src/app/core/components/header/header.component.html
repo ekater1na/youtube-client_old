@@ -1,0 +1,29 @@
+<mat-toolbar class="wrapper">
+
+    <button routerLink="/main"><mat-icon>menu</mat-icon></button>
+     
+     <form >
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <input type="text" matInput placeholder="search" #searchInput/>
+      </mat-form-field>
+      
+      <button type="submit" mat-icon-button>
+        <mat-icon>youtube_searched_for</mat-icon>
+      </button>
+
+        <button mat-icon-button (click)="onShowFilter()">
+          <mat-icon>tune</mat-icon>
+        </button>
+      </form>
+
+      <a routerLink="/login">
+        <span class="login">Your name</span>
+        <mat-icon>personal-outline</mat-icon>
+      </a>
+
+</mat-toolbar>
+
+<!-- <app-filtering-criteria *ngIf="showFilter"></app-filtering-criteria> -->
+
+<!-- (click)="onSearchInTitles(searchInput.value)" -->

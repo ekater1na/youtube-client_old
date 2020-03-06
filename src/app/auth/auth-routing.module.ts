@@ -11,3 +11,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AuthRoutingModule { }
+
+// {path: '', component: SearchResultsComponent,
+// children: [{ path: '', component: DetailsComponent }] }

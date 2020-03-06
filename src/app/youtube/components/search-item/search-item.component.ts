@@ -15,4 +15,8 @@ export class SearchItemComponent implements OnInit {
   public ngOnInit(): void {
     this.publicationDate = this.item.snippet.publishedAt;
   }
+
+  public showInfo(): void {
+    console.log('Log showInfo');
+  }
 }

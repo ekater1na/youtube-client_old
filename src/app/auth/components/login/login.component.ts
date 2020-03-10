@@ -1,42 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
-import { User } from '../../models/user.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  public currentUser: User;
-  public show: boolean;
-
-  constructor(
-      private router: Router,
-      private authService: AuthService
-  ) {
-      if (this.authService.login) {
-        this.router.navigate(['./main']);
-      }
-  }
-
-  public ngOnInit(): void { }
-
-  public auth(data: User): void {
-    // this.authService.setAuthToken(data);
-  if (data.login !== '' && data.password !== '') {
-    this.show = true;
-    this.authService.login(data.login, data.password);
-    this.router.navigate(['main']);
-  } else {
-    alert('Error');
-  }
-  }
-
-  public logout(): void {
-      this.authService.logout();
-      this.router.navigate(['/login']);
-  }
+  constructor() {  }
 }

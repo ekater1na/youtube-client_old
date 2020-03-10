@@ -1,18 +1,25 @@
-<mat-card>
-    <mat-card-content>
-       <form class="my-form">
-             <mat-form-field class="full-width">
-                <mat-label>Login</mat-label>
-                <input  matInput  placeholder="Login" name="login">
-             </mat-form-field>
-             <mat-form-field class="full-width">
-                <mat-label>Password</mat-label>
-                <input  matInput  placeholder="Password"  name="password">
-             </mat-form-field>
-             <mat-card-actions>
-                <button mat-raised-button  color="primary" >Login</button>
-             </mat-card-actions>
-       </form>
-    </mat-card-content>
- </mat-card>
- (click)="auth()"
+<mat-card class="container">
+   <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form>
+ <p>
+   <mat-form-field>
+     <input type="text" matInput placeholder="Username" formControlName="username">
+   </mat-form-field>
+ </p>
+
+ <p>
+   <mat-form-field>
+     <input type="password" matInput placeholder="Password" formControlName="password">
+   </mat-form-field>
+ </p>
+
+ <div class="button">
+   <button type="submit" mat-button>Login</button>
+ </div>
+
+</form>
+</mat-card-content>
+</mat-card>
+
+<!-- [formGroup]="form" (ngSubmit)="submit()" -->

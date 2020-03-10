@@ -1,6 +1,10 @@
 <mat-toolbar class="wrapper">
 
-    <button routerLink="/main"><mat-icon>menu</mat-icon></button>
+  <!-- <a [routerLink]="['login']" routerLinkActive="active">Login</a>
+  <a [routerLink]="['error']" routerLinkActive="active">Error</a>
+  <a [routerLink]="['main']" routerLinkActive="active">Main</a> -->
+
+    <button [routerLink]="['main']"><mat-icon>menu</mat-icon></button>
      
      <form >
       <mat-form-field class="example-full-width">
@@ -19,7 +23,7 @@
 
       <div >
         <span class="login">Your name</span>
-        <button routerLink="/login"><mat-icon>personal-outline</mat-icon></button>
+        <button [routerLink]="['login']" routerLinkActive="active" ><mat-icon>personal-outline</mat-icon></button>
       </div>
 
 </mat-toolbar>

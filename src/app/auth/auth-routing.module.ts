@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
@@ -11,6 +12,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AuthRoutingModule { }
-
-// {path: '', component: SearchResultsComponent,
-// children: [{ path: '', component: DetailsComponent }] }

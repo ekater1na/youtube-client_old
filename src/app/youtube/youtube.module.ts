@@ -10,6 +10,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { StateService } from './services/state.service';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     YoutubeRoutingModule,
     SharedModule
   ],
-  exports: [MainPageComponent]
+  exports: [MainPageComponent],
+  providers: [StateService]
 })
 export class YoutubeModule { }

@@ -8,7 +8,7 @@
         <input type="text" matInput placeholder="search" #searchInput/>
       </mat-form-field>
 
-      <button type="submit" mat-icon-button>
+      <button type="submit" mat-icon-button (click)="onSearchInTitles(searchInput.value)">
         <mat-icon>youtube_searched_for</mat-icon>
       </button>
 
@@ -26,5 +26,5 @@
 
 
 <!-- <app-filtering-criteria *ngIf="showFilter"></app-filtering-criteria>
-(click)="onSearchInTitles(searchInput.value)" -->
+ -->
 

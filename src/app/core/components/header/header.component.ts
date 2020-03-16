@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StatePages } from '../../models/state-pages';
 import { Router } from '@angular/router';
+import { StateService } from 'src/app/youtube/services/state.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   public searchStr: string = '';
   public statePages: StatePages;
 
-  constructor(private router: Router) { }
+  constructor(public stateService: StateService, private router: Router) { }
 
   public ngOnInit(): void {
     this.statePages = {
@@ -25,6 +26,10 @@ export class HeaderComponent implements OnInit {
 
   public onShowFilter(): void {
     this.showFilter = !this.showFilter;
+  }
+
+  public onSearchInTitles(word: string): void {
+    this.stateService.searchInTitles  = word;
   }
 
   public goTo(url): void {

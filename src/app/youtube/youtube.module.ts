@@ -12,7 +12,6 @@ import { FilteringCriteriaComponent } from './components/filtering-criteria/filt
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { StateService } from './services/state.service';
 
-
 @NgModule({
   declarations: [
     SearchResultsComponent,

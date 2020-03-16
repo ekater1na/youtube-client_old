@@ -10,7 +10,6 @@ const routes: Routes = [
   {path: '**', component: Error404PageComponent }
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

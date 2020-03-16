@@ -8,7 +8,6 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
 import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     HomePageComponent,

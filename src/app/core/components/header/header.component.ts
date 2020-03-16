@@ -32,12 +32,10 @@ export class HeaderComponent implements OnInit {
     this.stateService.searchInTitles  = word;
   }
 
-  public goTo(url): void {
+  public goTo(url: string): void {
     for (const page of Object.keys(this.statePages)) {
       this.statePages[page] = `/${page}` === url;
     }
     this.router.navigateByUrl(url);
   }
 }
-
-

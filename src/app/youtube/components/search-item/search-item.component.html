@@ -19,7 +19,6 @@
       <mat-card-title>{{item.snippet.title }}</mat-card-title>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-stroked-button><a>more...</a></button>
+      <button (click)="goToDetails()" mat-stroked-button><a>more...</a></button>
     </mat-card-actions>
   </mat-card>
-  

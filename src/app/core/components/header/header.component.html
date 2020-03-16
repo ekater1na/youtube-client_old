@@ -1,6 +1,6 @@
 <mat-toolbar class="wrapper">
 
-    <button ><mat-icon>menu</mat-icon></button>
+    <button  (click)="goTo('/main')"><mat-icon>menu</mat-icon></button>
 
      <form >
       <mat-form-field class="example-full-width">
@@ -17,9 +17,9 @@
         </button>
       </form>
 
-      <div >
+      <div>
         <span class="login">Your name</span>
-        <button routerLinkActive="active" ><mat-icon>person</mat-icon></button>
+        <button  (click)="goTo('/login')"><mat-icon>person</mat-icon></button>
       </div>
 
 </mat-toolbar>
@@ -27,5 +27,4 @@
 
 <!-- <app-filtering-criteria *ngIf="showFilter"></app-filtering-criteria>
 (click)="onSearchInTitles(searchInput.value)" -->
-<!-- [routerLink]="['main']" -->
-<!-- [routerLink]="['login']"  -->
+

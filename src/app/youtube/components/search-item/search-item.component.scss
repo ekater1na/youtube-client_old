@@ -1,14 +1,14 @@
 a {
     text-decoration: none;
   }
-   
+
   .mat-card-header .mat-card-title {
     font-size: 1rem;
     text-align: center;
   }
-  
+
   .mat-card-subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .mat-card-actions {
@@ -18,4 +18,7 @@ a {
   .mat-card-image {
     background-size: cover;
   }
-  
+
+  .icons {
+    text-align: center;
+  }

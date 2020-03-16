@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchResponse } from '../../models/search-response.model';
-import { SearchItem } from './../../models/search-item.model';
-import { RESPONSE } from './../../data';
+import { SearchItem } from '../../models/search-item.model';
+import { RESPONSE } from 'src/app/shared/data';
 
 @Component({
   selector: 'app-search-results',

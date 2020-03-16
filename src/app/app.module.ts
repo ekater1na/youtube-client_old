@@ -3,31 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { SearchItemComponent } from './components/search-item/search-item.component';
-import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SetBorderDirective } from './directives/set-border.directive';
-import { FilterPipe } from './pipes/filter.pipe';
-import { SortPipe } from './pipes/sort.pipe';
 import { FormsModule } from '@angular/forms';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
-    FilteringCriteriaComponent,
-    SetBorderDirective,
-    FilterPipe,
-    SortPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
+    SharedModule,
     FormsModule
   ],
   providers: [],

@@ -1,23 +1,27 @@
 mat-toolbar {
-    height: 80px;
+  height: 90px;
 }
 
-.logo {
-    margin-right: auto;
-    margin-left: 0;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .login {
-    margin-right: 0;
-    margin-left: auto;
+  margin-right: 0;
 }
 
 input {
-   border-radius: 5px;
-   width: 350px;
-   height: 30px;
+ border-radius: 5px;
+ width: 350px;
+ height: 30px;
 }
 
 .setting {
-    border: none;
+  border: none;
+}
+
+button {
+  border: none
 }

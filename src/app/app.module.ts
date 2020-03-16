@@ -8,11 +8,6 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
 import { SetBorderDirective } from './directives/set-border.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
@@ -33,11 +28,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    MatGridListModule,
     FormsModule
   ],
   providers: [],

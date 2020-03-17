@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailedPageComponent } from './pages/detailed-page/detailed-page.compo
   imports: [
     CommonModule,
     YoutubeRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [],
   providers: []

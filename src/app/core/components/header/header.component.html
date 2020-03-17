@@ -5,14 +5,15 @@
      <form >
       <mat-form-field class="example-full-width">
         <mat-label></mat-label>
-        <input type="text" matInput placeholder="search" #searchInput/>
+        <input type="text" matInput placeholder="search"
+        [disabled]="!loginState"
+          [value]="inputValue"
+          (input)="emitSearchWord($event)">
       </mat-form-field>
 
-      <button type="submit" mat-icon-button (click)="onSearchInTitles(searchInput.value)">
-        <mat-icon>youtube_searched_for</mat-icon>
-      </button>
-
-        <button mat-icon-button (click)="onShowFilter()">
+      <button mat-icon-button
+        [disabled]="!loginState"
+        (click)="isFilterCriteriaShown = !isFilterCriteriaShown">
           <mat-icon>tune</mat-icon>
         </button>
       </form>

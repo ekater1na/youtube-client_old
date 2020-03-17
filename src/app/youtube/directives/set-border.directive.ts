@@ -1,38 +1,31 @@
-import { Directive, ElementRef, Renderer2, OnChanges, Input } from '@angular/core';
+import { Directive, Input, HostBinding, OnInit } from '@angular/core';
+import { period } from '../models/period.mofel';
 
 @Directive({
   selector: '[appSetBorder]'
 })
-export class SetBorderDirective implements OnChanges {
-  private borderColor: string;
-  @Input() public publicationDate: string;
+export class SetBorderDirective implements OnInit {
+  @Input('appSetBorder') public date: string;
 
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
+  @HostBinding('style.borderBottom') public mark: string;
 
-    this.setBoxBoarder();
-   }
+  public ngOnInit(): void {
+    const now: Date = new Date();
+    const date: Date = new Date(this.date.replace(/-/g, '/'));
+    const millisecondsDifference: number = Math.abs(+now - +date);
 
-   public ngOnChanges(): void {
-    this.borderColor = '#FFFF00';
+    const daysDifference: number = millisecondsDifference / 86400000;
 
-    const date: Date = new Date(this.publicationDate);
-    const  duration: number = Math.ceil(Math.abs(Date.now() - date.getTime()) / (1000 * 3600 * 24));
-
-    if (duration < 31) {
-      this.borderColor = '#008000';
-     }
-    if (duration < 7) {
-      this.borderColor = '#0000FF';
+    if (daysDifference < period.week) {
+      this.mark = '5px solid #0000FF';
+      return;
+    } else if (daysDifference < period.month) {
+      this.mark = '5px solid #008000';
+      return;
+    } else if (daysDifference < period.halfYear) {
+      this.mark = '5px solid #FF0000';
+    } else if (daysDifference > period.halfYear) {
+      this.mark = '5px solid #FFFF00';
     }
-    if (duration > 180) {
-      this.borderColor = '#FF0000';
-   }
-    this.setBoxBoarder(`${this.borderColor}`);
-   }
-
-   public setBoxBoarder(color: string = '#FFFF00', size: string = '7'): void {
-    this.renderer2.setStyle(this.elementRef.nativeElement,
-                            'box-shadow', `0px ${size}px 0px 0px ${color}`);
-   }
-
+  }
 }

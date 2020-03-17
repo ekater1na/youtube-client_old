@@ -1,4 +1,5 @@
-<mat-card class="card" appSetBorder [publicationDate]='publicationDate'>
+<mat-card class="card">
+  <div [appSetBorder]="item.snippet.publishedAt | date:'yyyy/MM/dd HH:mm:ss'">
   <img mat-card-image src="{{item.snippet.thumbnails.high.url}}" alt="thumbnails">
     <mat-card-header>
 
@@ -21,4 +22,5 @@
     <mat-card-actions>
       <button [routerLink]="['/main', item.id]" mat-stroked-button><a>more...</a></button>
     </mat-card-actions>
+  </div>
   </mat-card>

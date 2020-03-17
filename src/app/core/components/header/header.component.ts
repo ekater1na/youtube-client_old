@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   public inputValue: string = '';
 
-  public loginToken: User;
+  public loginUser: User;
 
   public loginState: boolean;
 
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
     this.authService.userLoggingAuthStream
       .subscribe(token => {
-        this.loginToken = token;
+        this.loginUser = token;
       });
 
     this.searchWordStream

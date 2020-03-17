@@ -7,20 +7,24 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthService } from './services/auth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { YoutubeApiInterceptor } from './interceptors/youtube-api.interceptor';
+import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     HeaderComponent,
     Error404Component,
-    Error404PageComponent],
+    Error404PageComponent,
+    FilteringCriteriaComponent,
+  ],
   imports: [
     CommonModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   exports: [SharedModule, HomePageComponent, HeaderComponent],
   providers: [{

@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 500px;
+}
+
+.card__btn {
+  align-self: flex-start;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: 0;
+
+  font-size: 0;
+
+  background-color: #27AE60;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px 0 0 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.card__preview {
+  width: 700px;
+  height: 100%;
+}
+
+.card__data {
+  width: 420px;
+}
+
+.card__description {
+  max-height: 250px;
+
+  overflow: scroll;
+}

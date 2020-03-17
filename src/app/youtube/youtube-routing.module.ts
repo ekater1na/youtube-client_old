@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainPageComponent } from './pages/main-page/main-page.component';
+import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 const routes: Routes = [
-  {path: '', component: MainPageComponent}
+  {path: '', component: SearchResultsComponent},
+  {path: ':id', component: DetailedPageComponent}
 ];
 
 @NgModule({

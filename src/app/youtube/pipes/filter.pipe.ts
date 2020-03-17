@@ -6,10 +6,16 @@ import { SearchItem } from '../models/search-item.model';
 })
 export class FilterPipe implements PipeTransform {
 
-  public transform(items: SearchItem[], value: string ): SearchItem[] {
-    return items.filter(user => {
-      return user.snippet.title.includes(value);
+  public transform(searchItemsArray: SearchItem[], pattern: string): SearchItem[] {
+    if (!pattern.trim()) {
+      return searchItemsArray;
+    }
+
+    searchItemsArray = searchItemsArray.filter((item) => {
+      return item.snippet.title.toLowerCase().includes(pattern.toLowerCase());
     });
+
+    return searchItemsArray;
   }
 
 }

@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'login',  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path: 'main',
-  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule), },
+  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule), canActivate: [AuthGuard]},
   {path: '**', component: Error404PageComponent }
 ];
 
@@ -16,5 +16,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-// canActivate: [AuthGuard]

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../../../youtube/services/state.service';
 import { SortingService } from '@core/services/sorting.service';
 import { FilterService } from '@core/services/filter.servce';
 

@@ -19,6 +19,6 @@
       <mat-card-title>{{item.snippet.title }}</mat-card-title>
     </mat-card-header>
     <mat-card-actions>
-      <button (click)="goToDetails()" mat-stroked-button><a>more...</a></button>
+      <button [routerLink]="['/main', item.id]" mat-stroked-button><a>more...</a></button>
     </mat-card-actions>
   </mat-card>

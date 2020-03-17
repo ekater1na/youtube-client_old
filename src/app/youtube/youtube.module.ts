@@ -6,11 +6,9 @@ import { SetBorderDirective } from './directives/set-border.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { SharedModule } from '../shared/shared.module';
-import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { StateService } from './services/state.service';
-import { DetailsComponent } from './components/details/details.component';
+import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +17,14 @@ import { DetailsComponent } from './components/details/details.component';
     SetBorderDirective,
     FilterPipe,
     SortPipe,
-    MainPageComponent,
-    DetailsComponent
+    DetailedPageComponent,
   ],
   imports: [
     CommonModule,
     YoutubeRoutingModule,
     SharedModule
   ],
-  exports: [MainPageComponent],
-  providers: [StateService]
+  exports: [],
+  providers: []
 })
 export class YoutubeModule { }

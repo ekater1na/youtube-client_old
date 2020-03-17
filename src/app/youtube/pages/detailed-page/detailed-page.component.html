@@ -1,0 +1,50 @@
+<div class="card">
+  <a class="card__btn" [routerLink]="['/main']">go back</a>
+
+  <img class="card__preview" [src]="videoData.snippet.thumbnails.default.url" alt="screenshot">
+
+  <div class="card__data">
+    <div class="card__title-and-date-wrapper">
+      <h2 class="card__title">{{videoData.snippet.title}}</h2>
+      <span class="card__date">{{videoData.snippet.publishedAt | date}}</span>
+    </div>
+
+    <p>Description:</p>
+    <p class="card__description">{{videoData.snippet.description}}</p>
+
+    <ul class="card__statistics statistics">
+      <li class="statistics__item">
+        <img
+          class="statistics__icon"
+          src="../../../../assets/images/viewed.svg"
+          alt="views"
+        >
+        <span class="statistics__count">{{videoData.statistics.viewCount}}</span>
+      </li>
+      <li class="statistics__item">
+        <img
+          class="statistics__icon"
+          src="../../../../assets/images/liked.svg"
+          alt="likes"
+        >
+        <span class="statistics__count">{{videoData.statistics.likeCount}}</span>
+      </li>
+      <li class="statistics__item">
+        <img
+          class="statistics__icon"
+          src="../../../../assets/images/dislike.svg"
+          alt="dislikes"
+        >
+        <span class="statistics__count">{{videoData.statistics.dislikeCount}}</span>
+      </li>
+      <li class="statistics__item">
+        <img
+          class="statistics__icon"
+          src="../../../../assets/images/commented.svg"
+          alt="comments"
+        >
+        <span class="statistics__count">{{videoData.statistics.commentCount}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

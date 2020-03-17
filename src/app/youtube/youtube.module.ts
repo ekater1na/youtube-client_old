@@ -11,6 +11,7 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { StateService } from './services/state.service';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StateService } from './services/state.service';
     SetBorderDirective,
     FilterPipe,
     SortPipe,
-    MainPageComponent
+    MainPageComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

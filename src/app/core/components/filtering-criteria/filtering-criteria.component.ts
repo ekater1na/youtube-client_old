@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../youtube/services/state.service';
+import { SortingService } from '@core/services/sorting.service';
+import { FilterService } from '@core/services/filter.servce';
 
 @Component({
   selector: 'app-filtering-criteria',
@@ -8,17 +10,8 @@ import { StateService } from '../../../youtube/services/state.service';
 })
 export class FilteringCriteriaComponent implements OnInit {
 
-  constructor(public stateService: StateService) { }
+  constructor(public sortingService: SortingService, public filterService: FilterService) { }
 
   public ngOnInit(): void {
   }
-
-  public onSortBy(order: string): void {
-    if (this.stateService.bySort !== order) {
-      this.stateService.bySort = order;
-    } else {
-      this.stateService.bySort = null;
-    }
-  }
-
 }

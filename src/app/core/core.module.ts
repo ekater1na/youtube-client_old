@@ -8,6 +8,8 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
 import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { YoutubeApiInterceptor } from './interceptors/youtube-api.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,10 @@ import { AuthService } from './services/auth.service';
     BrowserAnimationsModule
   ],
   exports: [SharedModule, HomePageComponent, HeaderComponent],
-  providers: [AuthService]
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: YoutubeApiInterceptor,
+    multi: true
+  }]
 })
 export class CoreModule { }

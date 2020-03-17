@@ -8,7 +8,6 @@ import { SortPipe } from './pipes/sort.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
-import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { StateService } from './services/state.service';
 import { DetailsComponent } from './components/details/details.component';
@@ -17,7 +16,6 @@ import { DetailsComponent } from './components/details/details.component';
   declarations: [
     SearchResultsComponent,
     SearchItemComponent,
-    FilteringCriteriaComponent,
     SetBorderDirective,
     FilterPipe,
     SortPipe,

@@ -1,6 +1,6 @@
 <mat-toolbar class="wrapper">
 
-    <button  (click)="goTo('/main')"><mat-icon>menu</mat-icon></button>
+    <button [routerLink]="['/main']"><mat-icon>menu</mat-icon></button>
 
      <form >
       <mat-form-field class="example-full-width">
@@ -18,13 +18,15 @@
       </form>
 
       <div>
-        <span class="login">Your name</span>
-        <button  (click)="goTo('/login')"><mat-icon>person</mat-icon></button>
+        <span class="login">{{loginUser.login}}</span>
+        <button><mat-icon>person</mat-icon></button>
       </div>
+
+      <button class="user__logout btn" *ngIf="loginState" (click)="logout()">log out</button>
 
 </mat-toolbar>
 
 
-<!-- <app-filtering-criteria *ngIf="showFilter"></app-filtering-criteria>
- -->
+<app-filtering-criteria *ngIf="isFilterCriteriaShown && loginState"></app-filtering-criteria>
+
 

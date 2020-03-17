@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { StatePages } from '../../models/state-pages';
+import { AuthService } from '@core/services/auth.service';
 import { Router } from '@angular/router';
-import { StateService } from 'src/app/youtube/services/state.service';
+import { User } from 'src/app/auth/models/user.model';
+import { Subject } from 'rxjs';
+import {debounceTime, filter} from 'rxjs/operators';
+import { YoutubeDataService } from '@core/services/youtube-data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,33 +12,60 @@ import { StateService } from 'src/app/youtube/services/state.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public showFilter: boolean = false;
+  public isFilterCriteriaShown: boolean = false;
 
-  public searchStr: string = '';
-  public statePages: StatePages;
+  public inputValue: string = '';
 
-  constructor(public stateService: StateService, private router: Router) { }
+  public loginToken: User;
+
+  public loginState: boolean;
+
+  public searchWordStream: Subject<string> = new Subject<string>();
+
+  constructor(
+    private youtubeDataService: YoutubeDataService,
+    public authService: AuthService,
+    private router: Router,
+  ) {}
 
   public ngOnInit(): void {
-    this.statePages = {
-      main: true,
-      login: false,
-      video: false
-    };
+    this.authService.userLoggingStateStream
+      .subscribe(state => {
+        this.loginState = state;
+      });
+
+    this.authService.userLoggingAuthStream
+      .subscribe(token => {
+        this.loginToken = token;
+      });
+
+    this.searchWordStream
+      .pipe(
+        filter(word =>  word.length > 3),
+        debounceTime(1000)
+      )
+      .subscribe(word => {
+        this.youtubeDataService.searchWord = word;
+        this.youtubeDataService.fetchData();
+      });
   }
 
-  public onShowFilter(): void {
-    this.showFilter = !this.showFilter;
+  public emitSearchWord(event: Event): void {
+    this.searchWordStream.next((event.target as HTMLInputElement).value);
   }
 
-  public onSearchInTitles(word: string): void {
-    this.stateService.searchInTitles  = word;
-  }
+  public logout(): void {
+    this.inputValue = null;
 
-  public goTo(url: string): void {
-    for (const page of Object.keys(this.statePages)) {
-      this.statePages[page] = `/${page}` === url;
-    }
-    this.router.navigateByUrl(url);
+    this.authService.userLoggingStateStream.next(false);
+
+    this.authService.userLoggingAuthStream.next(
+      {
+        login: 'Name',
+        password: 1111
+      }
+    );
+
+    this.router.navigate(['/auth']);
   }
 }

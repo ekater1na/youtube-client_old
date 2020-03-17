@@ -18,4 +18,12 @@ export class SearchResultsComponent implements OnInit {
   public ngOnInit(): void {
   }
 
+  query: string;
+  artists: object;
+  currentArtist: object;
+
+  showItem(item) {
+    this.query = item.id;
+    this.currentArtist = item;
+  }
 }

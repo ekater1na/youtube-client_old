@@ -1,6 +1,5 @@
 export interface User {
   login: string;
-  password: string;
+  password: string | number;
   token?: string;
-  show?: boolean;
 }

@@ -7,7 +7,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthService } from '../auth/services/auth.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [

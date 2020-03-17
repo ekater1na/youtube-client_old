@@ -1,28 +1,3 @@
-// import { Injectable, EventEmitter } from '@angular/core';
-
-// @Injectable()
-// export class AuthService {
-
-//   public logined: EventEmitter<boolean> = new EventEmitter();
-
-//   constructor() { }
-
-//   public auth(username: string, password: string, show: boolean): boolean {
-//     localStorage.setItem('user', 'logined')
-//     this.logined.emit(show);
-//     return true;
-//   }
-
-//   public logout(): void {
-//     localStorage.removeItem('user');
-//   }
-
-  // public get loggedin(): boolean {
-  //   return (localStorage.getItem('user') !== null)
-  // }
-
-//   }
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, config } from 'rxjs';
@@ -44,7 +19,7 @@ export class AuthService {
     }
 
     public login(username, password) {
-        return this.http.post('login', { username, password })
+        return this.http.post('/login', { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));

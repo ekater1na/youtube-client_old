@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Error404PageComponent } from './core/pages/error404-page/error404-page.component';
+import { AuthGuard } from '@core/guards/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
-  {path: 'login',  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  {path: 'login',  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path: 'main',
-  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule)},
+  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule), },
   {path: '**', component: Error404PageComponent }
 ];
 
@@ -15,3 +16,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// canActivate: [AuthGuard]

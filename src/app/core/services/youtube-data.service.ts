@@ -52,7 +52,7 @@ export class YoutubeDataService {
                 params: new HttpParams({
                   fromObject: {
                     part: 'snippet,contentDetails,statistics',
-                    id: `${videoItem.id.videoId}`,
+                    id: `${videoItem.id['videoId']}`,
                   }
                 })
               }

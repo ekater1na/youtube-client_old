@@ -1,38 +1,11 @@
-
-<!-- <mat-grid-list gutterSize="10px" cols="3" rowHeight="1:1">
-
-    <mat-grid-tile *ngFor="let item of response.items"
-    | sort: sortingService.sortingCriteria | filter: filterService.filterCriteria">
-
-     <mat-card>
-        <mat-card-content>
-
-            <mat-grid-list cols="3" rowHeight="1:1">
-                <app-search-item [item]="item"></app-search-item>
-            </mat-grid-list>
-
-        </mat-card-content>
+  <mat-card
+    class="search-results"
+    *ngIf="youtubeDataService.searchResponse;"
+  >
+    <app-search-item
+      *ngFor="let item of youtubeDataService.videoDataList
+      | sort: sortingService.sortingCriteria
+      | filter: filterService.filterCriteria"
+      [item]="item"
+    ></app-search-item>
   </mat-card>
-
-    </mat-grid-tile>
-
-  </mat-grid-list> -->
-
-  <div>
-    <div *ngIf="!youtubeDataService.isLoading; else loadingAnimationBlock">
-      <div
-        class="search-results"
-        *ngIf="youtubeDataService.searchResponse;"
-      >
-        <app-search-item
-          *ngFor="let item of youtubeDataService.videoDataList | sort: sortingService.sortingCriteria | filter: filterService.filterCriteria"
-          [item]="item"
-        ></app-search-item>
-      </div>
-    </div>
-
-    <ng-template #loadingAnimationBlock>
-      <img src="../../../../assets/images/loading.svg" alt="loading...">
-    </ng-template>
-  </div>
-

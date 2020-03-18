@@ -21,4 +21,15 @@ a {
 
   .icons {
     text-align: center;
+    font-size: 0.65rem;
+    letter-spacing:  -.11em;
+  }
+
+  .mat-card-title {
+    height: 60px;
+    overflow: hidden;
+  }
+
+  mat-icon {
+    font-size: 0.65rem;
   }

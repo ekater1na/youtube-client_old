@@ -1,50 +1,24 @@
-<div class="card">
-  <a class="card__btn" [routerLink]="['/main']">go back</a>
+<mat-card class="example-card">
+  <mat-card-header >
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{videoData.snippet.title}}</mat-card-title>
+    <mat-card-subtitle>{{videoData.snippet.publishedAt | date}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="videoData.snippet.thumbnails.default.url" alt="screenshot">
+  <mat-card-content>
+    <p>{{videoData.snippet.description}}</p>
+  </mat-card-content>
+  <mat-card-subtitle class="icons row">
+    <mat-icon>visibility</mat-icon>
+    {{videoData.statistics.viewCount}}
 
-  <img class="card__preview" [src]="videoData.snippet.thumbnails.default.url" alt="screenshot">
+    <mat-icon>thumb_up</mat-icon>
+    {{videoData.statistics.likeCount}}
 
-  <div class="card__data">
-    <div class="card__title-and-date-wrapper">
-      <h2 class="card__title">{{videoData.snippet.title}}</h2>
-      <span class="card__date">{{videoData.snippet.publishedAt | date}}</span>
-    </div>
+    <mat-icon>thumb_down</mat-icon>
+    {{videoData.statistics.dislikeCount}}
 
-    <p>Description:</p>
-    <p class="card__description">{{videoData.snippet.description}}</p>
-
-    <ul class="card__statistics statistics">
-      <li class="statistics__item">
-        <img
-          class="statistics__icon"
-          src="../../../../assets/images/viewed.svg"
-          alt="views"
-        >
-        <span class="statistics__count">{{videoData.statistics.viewCount}}</span>
-      </li>
-      <li class="statistics__item">
-        <img
-          class="statistics__icon"
-          src="../../../../assets/images/liked.svg"
-          alt="likes"
-        >
-        <span class="statistics__count">{{videoData.statistics.likeCount}}</span>
-      </li>
-      <li class="statistics__item">
-        <img
-          class="statistics__icon"
-          src="../../../../assets/images/dislike.svg"
-          alt="dislikes"
-        >
-        <span class="statistics__count">{{videoData.statistics.dislikeCount}}</span>
-      </li>
-      <li class="statistics__item">
-        <img
-          class="statistics__icon"
-          src="../../../../assets/images/commented.svg"
-          alt="comments"
-        >
-        <span class="statistics__count">{{videoData.statistics.commentCount}}</span>
-      </li>
-    </ul>
-  </div>
-</div>
+    <mat-icon>chat_bubble_outline</mat-icon>
+    {{videoData.statistics.commentCount}}
+  </mat-card-subtitle>
+</mat-card>

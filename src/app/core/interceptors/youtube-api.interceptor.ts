@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class YoutubeApiInterceptor implements HttpInterceptor {
   private readonly API_URL: string = 'https://www.googleapis.com/youtube/v3/';
 
-  private readonly API_KEY: string = 'AIzaSyByFRCrQm0bfHfHaaKX2YwghTaHXt_1b1c';
+  private readonly API_KEY: string = 'AIzaSyAxxBiCUtHJF8EIR-qQobXLZsloXwqhPno';
 
   public intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let newParams: HttpParams = new HttpParams({

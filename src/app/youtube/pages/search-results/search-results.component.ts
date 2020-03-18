@@ -19,5 +19,4 @@ export class SearchResultsComponent {
     public filterService: FilterService
   ) { }
 
-
 }

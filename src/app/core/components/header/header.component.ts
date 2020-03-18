@@ -13,13 +13,9 @@ import { YoutubeDataService } from '@core/services/youtube-data.service';
 })
 export class HeaderComponent implements OnInit {
   public isFilterCriteriaShown: boolean = false;
-
   public inputValue: string = '';
-
   public loginUser: User;
-
   public loginState: boolean;
-
   public searchWordStream: Subject<string> = new Subject<string>();
 
   constructor(
@@ -61,11 +57,11 @@ export class HeaderComponent implements OnInit {
 
     this.authService.userLoggingAuthStream.next(
       {
-        login: 'Name',
+        login: 'Username',
         password: 1111
       }
     );
 
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/login']);
   }
 }

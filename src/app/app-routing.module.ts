@@ -7,7 +7,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'login',  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path: 'main',
-  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule), canActivate: [AuthGuard]},
+  loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule),
+    canActivate: [AuthGuard]},
   {path: '**', component: Error404PageComponent }
 ];
 

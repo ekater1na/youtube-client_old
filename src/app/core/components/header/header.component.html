@@ -6,7 +6,7 @@
       <mat-form-field class="example-full-width">
         <mat-label></mat-label>
         <input type="text" matInput placeholder="search"
-        [disabled]="!loginState"
+          [disabled]="!loginState"
           [value]="inputValue"
           (input)="emitSearchWord($event)">
       </mat-form-field>
@@ -14,16 +14,17 @@
       <button mat-icon-button
         [disabled]="!loginState"
         (click)="isFilterCriteriaShown = !isFilterCriteriaShown">
-          <mat-icon>tune</mat-icon>
-        </button>
+        <mat-icon>tune</mat-icon>
+      </button>
       </form>
 
       <div>
         <span class="login">{{loginUser.login}}</span>
         <button><mat-icon>person</mat-icon></button>
+        <button *ngIf="loginState" (click)="logout()"><mat-icon>cancel</mat-icon></button>
       </div>
 
-      <button class="user__logout btn" *ngIf="loginState" (click)="logout()">log out</button>
+
 
 </mat-toolbar>
 

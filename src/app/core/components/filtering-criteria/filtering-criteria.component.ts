@@ -9,7 +9,10 @@ import { FilterService } from '@core/services/filter.servce';
 })
 export class FilteringCriteriaComponent implements OnInit {
 
-  constructor(public sortingService: SortingService, public filterService: FilterService) { }
+  constructor(
+    public sortingService: SortingService,
+    public filterService: FilterService
+  ) { }
 
   public ngOnInit(): void {
   }

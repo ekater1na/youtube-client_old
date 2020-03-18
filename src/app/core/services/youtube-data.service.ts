@@ -47,25 +47,25 @@ export class YoutubeDataService {
         this.searchResponse = response;
 
         response.items.forEach(videoItem => {
-          // if (typeof videoItem.id !== 'string') {
-          //   this.http.get<SearchResponse>(this.VIDEOS_URL, {
-          //       params: new HttpParams({
-          //         fromObject: {
-          //           part: 'snippet,contentDetails,statistics',
-          //           id: `${videoItem.id.videoId}`,
-          //         }
-          //       })
-          //     }
-          //   )
-          //     .subscribe(
-          //       (videoData) => {
-          //       this.videoDataList.push(...videoData.items);
-          //     },
-          //       () => {
-          //         this.router.navigate(['/error']);
-          //       }
-          //     );
-          // }
+          if (typeof videoItem.id !== 'string') {
+            this.http.get<SearchResponse>(this.VIDEOS_URL, {
+                params: new HttpParams({
+                  fromObject: {
+                    part: 'snippet,contentDetails,statistics',
+                    id: `${videoItem.id.videoId}`,
+                  }
+                })
+              }
+            )
+              .subscribe(
+                (videoData) => {
+                this.videoDataList.push(...videoData.items);
+              },
+                () => {
+                  this.router.navigate(['/error']);
+                }
+              );
+          }
         });
       },
         () => {

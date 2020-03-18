@@ -7,7 +7,7 @@ export class AuthService {
   public userLoggingStateStream: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public userLoggingAuthStream: BehaviorSubject<User> = new BehaviorSubject<User>({
-    login: 'Name',
+    login: 'Username',
     password: 1111
   });
 }

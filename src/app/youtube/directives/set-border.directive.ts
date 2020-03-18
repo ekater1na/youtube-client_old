@@ -1,5 +1,4 @@
 import { Directive, Input, HostBinding, OnInit } from '@angular/core';
-import { period } from '../models/period.mofel';
 
 @Directive({
   selector: '[appSetBorder]'
@@ -16,15 +15,15 @@ export class SetBorderDirective implements OnInit {
 
     const daysDifference: number = millisecondsDifference / 86400000;
 
-    if (daysDifference < period.week) {
+    if (daysDifference < 7) {
       this.mark = '5px solid #0000FF';
       return;
-    } else if (daysDifference < period.month) {
+    } else if (daysDifference < 31) {
       this.mark = '5px solid #008000';
       return;
-    } else if (daysDifference < period.halfYear) {
+    } else if (daysDifference < 183) {
       this.mark = '5px solid #FF0000';
-    } else if (daysDifference > period.halfYear) {
+    } else if (daysDifference > 183) {
       this.mark = '5px solid #FFFF00';
     }
   }

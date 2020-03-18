@@ -1,0 +1,11 @@
+  <mat-card
+    class="search-results"
+    *ngIf="youtubeDataService.searchResponse;"
+  >
+    <app-search-item
+      *ngFor="let item of youtubeDataService.videoDataList
+      | sort: sortingService.sortingCriteria
+      | filter: filterService.filterCriteria"
+      [item]="item"
+    ></app-search-item>
+  </mat-card>

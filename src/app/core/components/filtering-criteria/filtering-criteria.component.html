@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <span>Sorting by:</span>
+  <button mat-icon-button
+      (click)="sortingService.sortingCriteria='date'"
+      [class.active]="sortingService.sortingCriteria==='date'">
+      date
+  </button>
+
+  <button mat-icon-button
+      [class.active]="sortingService.sortingCriteria==='views'"
+      (click)="sortingService.sortingCriteria='views'">
+      count of views
+  </button>
+
+  <mat-form-field class="mat-headline" >
+      <mat-label>by word or sentance</mat-label>
+      <input type="text" matInput
+      [(ngModel)]="filterService.filterCriteria">
+  </mat-form-field>
+</mat-toolbar>

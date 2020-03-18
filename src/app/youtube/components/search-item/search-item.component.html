@@ -1,0 +1,26 @@
+<mat-card class="card">
+  <div [appSetBorder]="item.snippet.publishedAt | date:'yyyy/MM/dd HH:mm:ss'">
+  <img mat-card-image src="{{item.snippet.thumbnails.high.url}}" alt="thumbnails">
+    <mat-card-header>
+
+      <mat-card-subtitle class="icons">
+        <mat-icon>visibility</mat-icon>
+        {{item.statistics.viewCount}}
+
+        <mat-icon>thumb_up</mat-icon>
+        {{item.statistics.likeCount}}
+
+        <mat-icon>thumb_down</mat-icon>
+        {{item.statistics.dislikeCount}}
+
+        <mat-icon>chat_bubble_outline</mat-icon>
+        {{item.statistics.commentCount}}
+      </mat-card-subtitle>
+
+      <mat-card-title>{{item.snippet.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button [routerLink]="['/main', item.id]" mat-stroked-button><a>more...</a></button>
+    </mat-card-actions>
+  </div>
+  </mat-card>
